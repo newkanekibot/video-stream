@@ -95,7 +95,7 @@ async def vplay(c: Client, m: Message):
         return
     try:
         ubot = (await user.get_me()).id
-        b = await c.get_chat_member(chat_id, ubot)
+        b = await c.get_chat_member(chat_id)
         if b.status == "kicked":
             await m.reply_text(
                 f"@{ASSISTANT_NAME} **is banned in group** {m.chat.title}\n\n» **unban the userbot first if you want to use this bot.**"
